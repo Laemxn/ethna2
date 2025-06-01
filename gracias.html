@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gracias</title>
+    <!-- Incluir Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animaciones CSS -->
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -21,24 +25,127 @@
         h1 {
             font-size: 3em;
             color: #ff6347;
+            animation: bounceIn 2s ease-in-out; /* Animación de rebote */
         }
 
         .message {
             font-size: 2em;
             color: #333;
             margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 3s ease-out forwards; /* Animación de desvanecimiento */
         }
 
-        .audio-container {
+        .video-container {
             margin-top: 30px;
+            width: 100%;
+            max-width: 800px;
+            opacity: 0;
+            animation: slideIn 2s ease-in-out forwards; /* Animación de deslizamiento */
         }
+
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        /* Animaciones CSS */
+        @keyframes bounceIn {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes shake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* Elementos de rosas y chocolates con animación */
+        .rose, .chocolate {
+            font-size: 2em;
+            animation: bounceIn 1s ease-in-out;
+            margin: 10px;
+        }
+
+        .rose {
+            color: #ff1493;
+        }
+
+        .chocolate {
+            color: #8b4513;
+        }
+
+        /* Efecto de corazon flotante (si deseas añadirlo) */
+        .heart {
+            font-size: 3em;
+            color: #ff69b4;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
     </style>
 </head>
 <body>
-    <div>
-        <h1>Gracias por perdonarme</h1>
+    <div class="container">
+        <!-- Título con animación -->
+        <h1 class="display-4">Gracias por perdonarme</h1>
         <div class="message">Espero que podamos empezar de nuevo. 💖</div>
+
+        <!-- Contenedor de la tarjeta de Bootstrap para video -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">Música para ti</h5>
+                <p class="card-text">Te agradezco mucho por perdonarme. Aquí te dejo algo especial:</p>
+                <!-- Reproductor de YouTube -->
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/watch?v=EaYmk5dhNbU&list=RDEMAwT8zNeHxplUy1OJ-RTUdg&index=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Elementos graciosos: Rosas y Chocolates -->
+        <div class="mt-4">
+            <span class="rose">🌹</span>
+            <span class="rose">🌹</span>
+            <span class="rose">🌹</span>
+            <span class="chocolate">🍫</span>
+            <span class="chocolate">🍫</span>
+            <span class="chocolate">🍫</span>
+        </div>
+
+        <!-- Corazones flotantes -->
+        <div class="heart-container">
+            <span class="heart">💖</span>
+            <span class="heart">💖</span>
+            <span class="heart">💖</span>
+        </div>
+
     </div>
+
+    <!-- Incluir Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
+
 
